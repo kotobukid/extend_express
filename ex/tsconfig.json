@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "noUnusedParameters": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true,
+    "newLine": "lf"
+  },
+  "files": [
+    "bin/www.ts"
+  ],
+  "include": [
+  ]
+}
