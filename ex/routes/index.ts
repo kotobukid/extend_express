@@ -1,21 +1,5 @@
 import express, {Router, Request, Response, NextFunction} from 'express';
 
-declare global {
-    namespace Express {
-        interface Request {
-            user?: {
-                id: number;
-                username: string;
-            };
-        }
-        interface Response {
-            myCustomData?: {
-                hoge: number
-            }
-        }
-    }
-}
-
 const router: Router = Router();
 
 const middleware1: express.RequestHandler = (req: Request, res: Response, next: NextFunction): void => {
