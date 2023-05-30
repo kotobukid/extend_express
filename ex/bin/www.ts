@@ -8,8 +8,6 @@ import Debug from 'debug';
 
 const debug = Debug('ats_yms:server');
 import http from 'http';
-import fs from 'fs';
-import path from 'path';
 
 
 /**
@@ -24,31 +22,6 @@ app.set('port', port);
  */
 
 const server: http.Server = http.createServer(app);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-// wipe redis temporary keys by pattern
-const bulk_delete_redis = (key_pattern: string, complete: Function): void => {
-    complete();
-}
-
-bulk_delete_redis('io_id:*', (): void => {
-    bulk_delete_redis('io_sid:*', (): void => {
-        bulk_delete_redis('user:*/permission', (): void => {
-            server.listen(port);
-            server.on('error', onError);
-            server.on('listening', onListening);
-            console.log(`listening start on port ${port}`);
-        });
-    });
-});
-
-
-/**
- * Normalize a port into a number, string, or false.
- */
 
 function normalizePort(val: string) {
     const port = parseInt(val, 10);

@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
   # config.vm.network "private_network", ip: "192.168.33.10"
 
-  config.vm.network "public_network", bridge: "eno1"
+  config.vm.network "public_network"
 
   config.vm.synced_folder "./data", "/vagrant_data", "create": true
 
@@ -28,13 +28,5 @@ Vagrant.configure("2") do |config|
     # source ~/.bashrc
     # nvm install v16.20.0
     # nvm use v16.20.0
-
-    # apt-get install -y apache2
-    # mkdir downloads
-    # cd downloads
-    # wget https://github.com/redis/redis/archive/7.0.10.tar.gz
-    # tar zxvf 7.0.10.tar.gz
-    # cd redis-7.0.10
-    # cp redis.conf ~/redis.conf
   SHELL
 end
