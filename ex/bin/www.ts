@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-import app from '../app';
+import app from '../app.js';
 import Debug from 'debug';
 
 const debug = Debug('ats_yms:server');
